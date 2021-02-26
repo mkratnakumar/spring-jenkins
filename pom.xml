@@ -16,7 +16,15 @@
 	<description>spring with jenkin integration </description>
 	<packaging>war</packaging>
 	<properties>
-		<java.version>1.8</java.version>
+		<jdk.version>1.8</jdk.version>
+		<spring.version>5.1.2.RELEASE</spring.version>
+		<junit.version>4.11</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<sonar.host.url>http://192.168.0.104:9000/</sonar.host.url>
+		<sonar.login>3d13532db572a9b703dbd0be3305cd4677281666</sonar.login>
+		<!--<sonar.password>admin</sonar.password> --> 
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<dependencies>
@@ -31,6 +39,20 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<distributionManagement>
+            <repository>
+	      <id>nexus</id>
+	      <name>Mithun Technologies Releases Nexus Repository</name>
+	      <url>http://192.168.0.104:8081/repository/qa-released/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>Mithun Technologies Snapshot Nexus Repository </name>
+	      <url>http://192.168.0.104:8081/repository/qa-snapshot/</url>
+	    </snapshotRepository>
+	    
+	</distributionManagement>
 
 	<build>
 		<plugins>
